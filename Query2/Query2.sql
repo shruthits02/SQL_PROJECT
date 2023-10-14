@@ -4,4 +4,4 @@ when amount < 5 then round(amount+(amount*10)/100,2)
 else round(amount+(amount*13)/100,2)
 end as selling_price, payment_date
 from payment
-limit 100
+limit 50

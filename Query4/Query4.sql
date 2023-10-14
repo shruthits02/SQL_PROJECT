@@ -6,5 +6,5 @@ r.rental_id,r.rental_date,r.return_date,concat(c.first_name,' ',c.last_name)as N
 	
 WHERE
 	r.return_date BETWEEN '2005-01-01' AND '2005-12-31'
-	order by r.customer_id asc,rental_id desc	
-	
+	order by r.customer_id asc,rental_id desc
+limit 50	
