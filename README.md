@@ -9,20 +9,20 @@ The DVD Rental Management System is a database-driven application that enables a
 <br>
 There are 15 tables in the DVD Rental database:<br><br>
 
-actor – stores actors data including first name and last name.<br>
-:movie_camera:film – stores film data such as title, release year, length, rating, etc.<br>
-film_actor – stores the relationships between films and actors.<br>
-category – stores film’s categories data.<br>
-film_category- stores the relationships between films and categories.<br>
-store – contains the store data including manager staff and address.<br>
-inventory – stores inventory data.<br>
-rental – stores rental data.<br>
-:dollar:payment – stores customer’s payments.<br>
-staff – stores staff data.<br>
-customer – stores customer data.<br>
-address – stores address data for staff and customers.<br>
-:city_sunrise:city – stores city names.<br>
-country – stores country names.<br>
+:black_circle: actor – stores actors data including first name and last name.<br>
+:black_circle: :movie_camera:film – stores film data such as title, release year, length, rating, etc.<br>
+:black_circle: film_actor – stores the relationships between films and actors.<br>
+:black_circle: category – stores film’s categories data.<br>
+:black_circle: film_category- stores the relationships between films and categories.<br>
+:black_circle: store – contains the store data including manager staff and address.<br>
+:black_circle: inventory – stores inventory data.<br>
+:black_circle: rental – stores rental data.<br>
+:black_circle: :dollar:payment – stores customer’s payments.<br>
+:black_circle: staff – stores staff data.<br>
+:black_circle: customer – stores customer data.<br>
+:black_circle: address – stores address data for staff and customers.<br>
+:black_circle: :city_sunrise:city – stores city names.<br>
+:black_circle: country – stores country names.<br>
 
 
 
