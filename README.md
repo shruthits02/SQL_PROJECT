@@ -8,9 +8,9 @@ The DVD Rental Management System is a database-driven application that enables a
 
 
 
-<br>
-![dvd-rental-sample-database-diagram](https://github.com/shruthits02/SQL_PROJECT/assets/147556178/71afa2ec-fe49-429b-b495-3ddcfef40a9e)
-<br>
+
+![dvd-rental-sample-database-diagram](https://github.com/shruthits02/SQL_PROJECT/assets/147556178/8dc0208c-4d42-4867-9780-f8425ad8c694)
+
 
 
 
