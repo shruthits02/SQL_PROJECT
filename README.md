@@ -30,8 +30,17 @@ There are 15 tables in the DVD Rental database:<br><br>
 
 ![dvd-rental-sample-database-diagram](https://github.com/shruthits02/SQL_PROJECT/assets/147556178/8dc0208c-4d42-4867-9780-f8425ad8c694)
 
-<h3>SQL Code Analysis</h3>
-<br>
+# SQL Code Analysis
+
+**1. Select and count(distinct)**
+
+```
+SELECT COUNT(DISTINCT CUSTOMER_ID) AS UNIQUE_TOTAL_CUSTOMER
+FROM CUSTOMER;
+```
+
+This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER." 
+
 
 
 
