@@ -62,7 +62,7 @@ LIMIT 50;
 ```
 This query selects the specified columns from the "payment" table. It calculates the "selling_price" using a CASE statement that applies a 10% tax rate if the "amount" is less than 5, and a 13% tax rate if the "amount" is greater than or equal to 5. The "selling_price" is then rounded to two decimal places. Finally, the query limits the result to the first 50 rows using LIMIT 50.
 
-**3.Wild characters Like and %**
+**3.Wild characters Like and '%' and '_'**
 ```
 SELECT
     language_id,
@@ -81,6 +81,22 @@ ORDER BY film_id DESC
 LIMIT 50;
 ```
 selects specific columns from the "film" table where the "description" column contains the words 'car' or 'japan' (case-insensitive) and the "language_id" is in the set of IDs for languages with names 'English,' 'French,' or 'Japanese.' The results are then ordered by "film_id" in descending order and limited to the first 50 rows.
+
+**4.**
+```
+SELECT r.customer_id,
+r.rental_id,r.rental_date,r.return_date,concat(c.first_name,' ',c.last_name)as Name,c.email
+ FROM
+	rental r
+	join customer c on c.customer_id=r.customer_id
+	
+WHERE
+	r.return_date BETWEEN '2005-01-01' AND '2005-12-31'
+	order by r.customer_id asc,rental_id desc
+limit 50
+```
+**5.**
+```
 
 
 
