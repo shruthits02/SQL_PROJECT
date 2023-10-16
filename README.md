@@ -116,7 +116,9 @@ SELECT
   round(stddev(rental_duration),2) AS stddev_rental_duration
 FROM film;
 ```
-
-
+**7.**
+**8.**
+**9.**
+**10**
 
 
