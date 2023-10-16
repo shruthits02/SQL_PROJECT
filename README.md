@@ -2,9 +2,9 @@
 <img align="left" width="120" height="70" src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/a99a963a-f4a7-4a01-872f-0ebf229a19ba">
 <h1>Project</h1>
 <p align="center">
-  <img width="800" height="300" src="(https://github.com/shruthits02/SQL_PROJECT/assets/147556178/6b4d7e5e-3182-4a2d-ab17-0d5a5e6e6d16">
+  <img src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/ec0bcdfb-a432-4179-8905-cc292a29766c" alt="Image" width="600">
 </p>
-
+  
 # :page_facing_up:Project Overview:
 
 The DVD Rental Management System is a database-driven application that enables a rental store to efficiently manage its DVD inventory and rental operations. This system is designed to keep track of customer information, available DVDs, rentals, returns, and employee roles within the rental store. It simplifies the rental process, streamlines inventory management, and helps employees provide excellent customer service.<br>
