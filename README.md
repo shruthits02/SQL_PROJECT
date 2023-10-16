@@ -71,7 +71,7 @@ SELECT
     description
 FROM film
 WHERE
-    (description ILIKE '%car%' OR description ILIKE '%japan%')
+    (description ILIKE '%car%' OR description ILIKE '%j_p_n%')
     AND language_id IN (
         SELECT language_id
         FROM language
