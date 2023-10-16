@@ -107,7 +107,8 @@ GROUP BY
 HAVING
 	SUM (amount) > 150
 ```
-
+**6.**
+```
 
 
 
