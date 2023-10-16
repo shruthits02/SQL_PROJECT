@@ -44,6 +44,24 @@ FROM CUSTOMER;
 
 This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER." 
 
+**2. case statement and Round**
+```
+SELECT
+    payment_id,
+    customer_id,
+    staff_id,
+    rental_id,
+    amount,
+    CASE
+        WHEN amount < 5 THEN ROUND(amount + (amount * 10) / 100, 2)
+        ELSE ROUND(amount + (amount * 13) / 100, 2)
+    END AS selling_price,
+    payment_date
+FROM payment
+LIMIT 50;
+```
+This query selects the specified columns from the "payment" table. It calculates the "selling_price" using a CASE statement that applies a 10% tax rate if the "amount" is less than 5, and a 13% tax rate if the "amount" is greater than or equal to 5. The "selling_price" is then rounded to two decimal places. Finally, the query limits the result to the first 50 rows using LIMIT 50.
+
 
 
 
