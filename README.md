@@ -30,6 +30,8 @@ There are 15 tables in the DVD Rental database:<br><br>
 
 ![dvd-rental-sample-database-diagram](https://github.com/shruthits02/SQL_PROJECT/assets/147556178/8dc0208c-4d42-4867-9780-f8425ad8c694)
 
+<h3>SQL Code Analysis</h3>
+<br>
 
 
 
