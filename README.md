@@ -62,7 +62,7 @@ LIMIT 50;
 ```
 This query selects the specified columns from the "payment" table. It calculates the "selling_price" using a CASE statement that applies a 10% tax rate if the "amount" is less than 5, and a 13% tax rate if the "amount" is greater than or equal to 5. The "selling_price" is then rounded to two decimal places. Finally, the query limits the result to the first 50 rows using LIMIT 50.
 
-**3.Wild characters Like and '%' and '_'**
+**3.Wild characters used in Like '%' and '_'**
 ```
 SELECT
     language_id,
