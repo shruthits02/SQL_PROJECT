@@ -62,7 +62,7 @@ LIMIT 50;
 ```
 This query selects the specified columns from the "payment" table. It calculates the "selling_price" using a CASE statement that applies a 10% tax rate if the "amount" is less than 5, and a 13% tax rate if the "amount" is greater than or equal to 5. The "selling_price" is then rounded to two decimal places. Finally, the query limits the result to the first 50 rows using LIMIT 50.
 
-**3.Wild characters Like and %**
+**3.Wild characters Like and '%' and '_'**
 ```
 SELECT
     language_id,
@@ -71,7 +71,7 @@ SELECT
     description
 FROM film
 WHERE
-    (description ILIKE '%car%' OR description ILIKE '%japan%')
+    (description ILIKE '%car%' OR description ILIKE '%j_p_n%')
     AND language_id IN (
         SELECT language_id
         FROM language
@@ -82,6 +82,120 @@ LIMIT 50;
 ```
 selects specific columns from the "film" table where the "description" column contains the words 'car' or 'japan' (case-insensitive) and the "language_id" is in the set of IDs for languages with names 'English,' 'French,' or 'Japanese.' The results are then ordered by "film_id" in descending order and limited to the first 50 rows.
 
+**4.**
+```
+SELECT r.customer_id,
+r.rental_id,r.rental_date,r.return_date,concat(c.first_name,' ',c.last_name)as Name,c.email
+ FROM
+	rental r
+	join customer c on c.customer_id=r.customer_id
+	
+WHERE
+	r.return_date BETWEEN '2005-01-01' AND '2005-12-31'
+	order by r.customer_id asc,rental_id desc
+limit 50
+```
+The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows. 
 
+**5.**
+```
+SELECT
+	customer_id,
+	SUM (amount) as Total
+FROM
+	payment
+GROUP BY
+	customer_id
+HAVING
+	SUM (amount) > 150
+```
+This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
 
+**6.Maximum, minmimum, average, and standard deviation**
+```
+SELECT 
+  MAX(rental_duration) AS max_rental_duration,
+  MIN(rental_duration) AS min_rental_duration,
+  round(AVG(rental_duration),2) AS avg_rental_duration,
+  round(stddev(rental_duration),2) AS stddev_rental_duration
+FROM film;
+```
+This SQL query calculates various statistical measures for the "rental_duration" column in the "film" table, including the maximum, minimum, average, and standard deviation.
+
+**7.**
+```
+SELECT country.country, COUNT(city.city) AS city_count
+FROM city
+JOIN country ON city.country_id = country.country_id
+GROUP BY country.country
+ORDER BY city_count DESC
+LIMIT 5
+```
+This SQL query retrieves the top 5 countries with the highest number of cities in a descending order based on the count of cities.
+
+**8.**
+```
+WITH CustomerRentals AS (
+  SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    COUNT(r.rental_id) AS rental_count
+  FROM
+    customer c
+    JOIN rental r ON c.customer_id = r.customer_id
+  GROUP BY
+    c.customer_id
+)
+SELECT
+  customer_id,
+  first_name,
+  last_name,
+  rental_count
+FROM CustomerRentals
+WHERE rental_count = (SELECT MAX(rental_count) FROM CustomerRentals)
+```
+This SQL query first creates a Common Table Expression (CTE) called "CustomerRentals" to find the customer with the maximum number of rentals and then selects that customer.
+
+**9.**
+```
+SELECT f.title as movie_name, c.name, CONCAT(a.first_name, ' ', a.last_name) as actor_name
+FROM film_actor fa
+LEFT JOIN actor a ON fa.actor_id = a.actor_id
+JOIN film f ON f.film_id = fa.film_id
+JOIN film_category fc ON fc.film_id = f.film_id
+JOIN category c ON c.category_id = fc.category_id
+WHERE c.name = 'Comedy' AND CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer Davis';
+```
+This SQL query retrieves a list of comedy films featuring the actor "Jennifer Davis" by joining the "film_actor," "actor," "film," "film_category," and "category" tables. 
+
+**10**
+```
+WITH PaymentStats AS (
+  SELECT p.customer_id, SUM(p.amount) AS total_payment
+  FROM payment p
+  GROUP BY p.customer_id
+),
+RentalStats AS (
+  SELECT r.customer_id, COUNT(r.rental_id) AS num_rentals
+  FROM rental r
+  GROUP BY r.customer_id
+)
+SELECT
+  c1.customer_id AS top_paying_customer_id,
+  c1.first_name AS top_paying_first_name,
+  c1.last_name AS top_paying_last_name,
+  p.total_payment AS top_payment_amount,
+  c2.customer_id AS most_renting_customer_id,
+  c2.first_name AS most_renting_first_name,
+  c2.last_name AS most_renting_last_name,
+  r.num_rentals AS most_rented_films
+FROM Customer c1
+INNER JOIN PaymentStats p ON c1.customer_id = p.customer_id
+INNER JOIN Customer c2 ON c1.customer_id = c2.customer_id
+INNER JOIN RentalStats r ON c2.customer_id = r.customer_id
+WHERE p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)
+   OR r.num_rentals = (SELECT MAX(num_rentals) FROM RentalStats);
+```
+This SQL query calculates the top-paying customer and the customer with the most rentals and then combines the results into a single query.
 
