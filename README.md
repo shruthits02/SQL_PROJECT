@@ -190,6 +190,12 @@ FROM film;
 ```
 This SQL query calculates various statistical measures for the "rental_duration" column in the "film" table, including the maximum, minimum, average, and standard deviation.
 
+**Output**
+```
+"max_rental_duration","min_rental_duration","avg_rental_duration","stddev_rental_duration"
+7,3,"4.99","1.41"
+```
+
 **7.Subquery and Dense_rank**
 ```
 SELECT
