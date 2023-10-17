@@ -82,7 +82,7 @@ LIMIT 50;
 ```
 selects specific columns from the "film" table where the "description" column contains the words 'car' or 'japan' (case-insensitive) and the "language_id" is in the set of IDs for languages with names 'English,' 'French,' or 'Japanese.' The results are then ordered by "film_id" in descending order and limited to the first 50 rows.
 
-**4.**
+**4.Between and inner join**
 ```
 SELECT r.customer_id,
 r.rental_id,r.rental_date,r.return_date,concat(c.first_name,' ',c.last_name)as Name,c.email
@@ -97,7 +97,7 @@ limit 50
 ```
 The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows. 
 
-**5.**
+**5.Sum, group by and having clause**
 ```
 SELECT
 	customer_id,
@@ -162,7 +162,7 @@ WHERE rental_count = (SELECT MAX(rental_count) FROM CustomerRentals)
 ```
 This SQL query first creates a Common Table Expression (CTE) called "CustomerRentals" to find the customer with the maximum number of rentals and then selects that customer.
 
-**9.**
+**9.Left join and concat**
 ```
 SELECT f.title as movie_name, c.name, CONCAT(a.first_name, ' ', a.last_name) as actor_name
 FROM film_actor fa
@@ -174,7 +174,7 @@ WHERE c.name = 'Comedy' AND CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer D
 ```
 This SQL query retrieves a list of comedy films featuring the actor "Jennifer Davis" by joining the "film_actor," "actor," "film," "film_category," and "category" tables. 
 
-**10**
+**10. Cte's**
 ```
 WITH PaymentStats AS (
   SELECT p.customer_id, SUM(p.amount) AS total_payment
