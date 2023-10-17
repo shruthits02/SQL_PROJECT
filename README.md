@@ -111,7 +111,7 @@ HAVING
 ```
 This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
 
-**6.**
+**6.Maximum, minmimum, average, and standard deviation**
 ```
 SELECT 
   MAX(rental_duration) AS max_rental_duration,
@@ -123,7 +123,6 @@ FROM film;
 This SQL query calculates various statistical measures for the "rental_duration" column in the "film" table, including the maximum, minimum, average, and standard deviation.
 
 **7.**
-This SQL query retrieves the top 5 countries with the highest number of cities in a descending order based on the count of cities. 
 ```
 SELECT country.country, COUNT(city.city) AS city_count
 FROM city
@@ -132,6 +131,8 @@ GROUP BY country.country
 ORDER BY city_count DESC
 LIMIT 5
 ```
+This SQL query retrieves the top 5 countries with the highest number of cities in a descending order based on the count of cities.
+
 **8.**
 ```
 WITH CustomerRentals AS (
