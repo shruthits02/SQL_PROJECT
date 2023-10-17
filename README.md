@@ -261,6 +261,12 @@ WHERE c.name = 'Comedy' AND CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer D
 ```
 This SQL query retrieves a list of comedy films featuring the actor "Jennifer Davis" by joining the "film_actor," "actor," "film," "film_category," and "category" tables. 
 
+**Output**
+```
+"movie_name","name","actor_name"
+"Submarine Bed","Comedy","Jennifer Davis"
+```
+
 **10. Cte's**
 ```
 WITH PaymentStats AS (
