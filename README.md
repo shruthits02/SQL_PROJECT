@@ -155,6 +155,8 @@ SELECT
 FROM CustomerRentals
 WHERE rental_count = (SELECT MAX(rental_count) FROM CustomerRentals)
 ```
+This SQL query first creates a Common Table Expression (CTE) called "CustomerRentals" to find the customer with the maximum number of rentals and then selects that customer.
+
 **9.**
 ```
 SELECT f.title as movie_name, c.name, CONCAT(a.first_name, ' ', a.last_name) as actor_name
