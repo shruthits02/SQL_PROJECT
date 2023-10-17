@@ -44,7 +44,7 @@ FROM CUSTOMER;
 
 This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER." 
 
-**2. case statement and Round**
+**2. Case statement and Round**
 ```
 SELECT
     payment_id,
@@ -124,14 +124,19 @@ This SQL query calculates various statistical measures for the "rental_duration"
 
 **7.**
 ```
-SELECT country.country, COUNT(city.city) AS city_count
-FROM city
-JOIN country ON city.country_id = country.country_id
-GROUP BY country.country
-ORDER BY city_count DESC
-LIMIT 5
+SELECT
+    f.film_id,
+    f.title AS film_title,
+    f.rental_duration,
+    (
+        SELECT DENSE_RANK() OVER (ORDER BY rental_duration DESC)
+        FROM film AS subfilm
+        WHERE subfilm.film_id = f.film_id
+    ) AS rental_duration_rank
+FROM film f
+limit 50
 ```
-This SQL query retrieves the top 5 countries with the highest number of cities in a descending order based on the count of cities.
+The SQL query you provided appears to be correct for ranking films by rental duration using DENSE_RANK and a correlated subquery. This query will produce a list of films along with their rental duration and the corresponding rank of the films based on rental duration in descending order.
 
 **8.**
 ```
