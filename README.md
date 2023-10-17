@@ -170,7 +170,14 @@ This SQL query is used to retrieve the total payment amount for each customer an
 
 **Output**
 ```
-
+"customer_id","total"
+550,"151.69"
+176,"151.68"
+187,"151.73"
+181,"167.67"
+410,"167.62"
+522,"161.68"
+```
 
 **6.Maximum, minmimum, average, and standard deviation**
 ```
