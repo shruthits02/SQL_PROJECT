@@ -197,5 +197,5 @@ INNER JOIN RentalStats r ON c2.customer_id = r.customer_id
 WHERE p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)
    OR r.num_rentals = (SELECT MAX(num_rentals) FROM RentalStats);
 ```
-
+This SQL query calculates the top-paying customer and the customer with the most rentals and then combines the results into a single query.
 
