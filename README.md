@@ -137,6 +137,7 @@ WHERE
 limit 50
 ```
 The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows.
+
 **Output**
 ```
 "customer_id","rental_id","rental_date","return_date","name","email"
@@ -166,6 +167,10 @@ HAVING
 	SUM (amount) > 150
 ```
 This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
+
+**Output**
+```
+
 
 **6.Maximum, minmimum, average, and standard deviation**
 ```
