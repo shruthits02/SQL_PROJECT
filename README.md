@@ -104,6 +104,7 @@ ORDER BY film_id DESC
 LIMIT 50;
 ```
 selects specific columns from the "film" table where the "description" column contains the words 'car' or 'japan' (case-insensitive) and the "language_id" is in the set of IDs for languages with names 'English,' 'French,' or 'Japanese.' The results are then ordered by "film_id" in descending order and limited to the first 50 rows.
+
 **Output**
 ```
 "language_id","film_id","title","description"
@@ -135,7 +136,22 @@ WHERE
 	order by r.customer_id asc,rental_id desc
 limit 50
 ```
-The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows. 
+The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows.
+**Output**
+```
+"customer_id","rental_id","rental_date","return_date","name","email"
+1,15315,"2005-08-22 20:03:46","2005-08-30 01:51:46","Mary Smith","mary.smith@sakilacustomer.org"
+1,15298,"2005-08-22 19:41:37","2005-08-28 22:49:37","Mary Smith","mary.smith@sakilacustomer.org"
+1,14825,"2005-08-22 01:27:57","2005-08-27 07:01:57","Mary Smith","mary.smith@sakilacustomer.org"
+1,14762,"2005-08-21 23:33:57","2005-08-23 01:30:57","Mary Smith","mary.smith@sakilacustomer.org"
+1,13176,"2005-08-19 13:56:54","2005-08-23 08:50:54","Mary Smith","mary.smith@sakilacustomer.org"
+1,13068,"2005-08-19 09:55:16","2005-08-20 14:44:16","Mary Smith","mary.smith@sakilacustomer.org"
+1,12250,"2005-08-18 03:57:29","2005-08-22 23:05:29","Mary Smith","mary.smith@sakilacustomer.org"
+1,11824,"2005-08-17 12:37:54","2005-08-19 10:11:54","Mary Smith","mary.smith@sakilacustomer.org"
+1,11367,"2005-08-02 18:01:38","2005-08-04 13:19:38","Mary Smith","mary.smith@sakilacustomer.org"
+1,11299,"2005-08-02 15:36:52","2005-08-10 16:40:52","Mary Smith","mary.smith@sakilacustomer.org"
+1,10437,"2005-08-01 08:51:04","2005-08-10 12:12:04","Mary Smith","mary.smith@sakilacustomer.org"
+```
 
 **5.Sum, group by and having clause**
 ```
