@@ -95,6 +95,7 @@ WHERE
 	order by r.customer_id asc,rental_id desc
 limit 50
 ```
+The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows. 
 **5.**
 ```
 SELECT
