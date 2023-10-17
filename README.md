@@ -108,6 +108,7 @@ GROUP BY
 HAVING
 	SUM (amount) > 150
 ```
+This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
 **6.**
 ```
 SELECT 
