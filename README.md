@@ -44,6 +44,12 @@ FROM CUSTOMER;
 
 This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER." 
 
+**Output**
+```
+"unique_total_customer"
+"599"
+```
+
 **2. Case statement and Round**
 ```
 SELECT
