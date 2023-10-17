@@ -297,3 +297,9 @@ WHERE p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)
 ```
 This SQL query calculates the top-paying customer and the customer with the most rentals and then combines the results into a single query.
 
+**Output**
+```
+"top_paying_customer_id","top_paying_first_name","top_paying_last_name","top_payment_amount","most_renting_customer_id","most_renting_first_name","most_renting_last_name","most_rented_films"
+148,"Eleanor","Hunt","211.55",148,"Eleanor","Hunt","46"
+```
+
