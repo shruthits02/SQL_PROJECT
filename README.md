@@ -212,6 +212,19 @@ limit 50
 ```
 The SQL query you provided appears to be correct for ranking films by rental duration using DENSE_RANK and a correlated subquery. This query will produce a list of films along with their rental duration and the corresponding rank of the films based on rental duration in descending order.
 
+**Output**
+```
+"film_id","film_title","rental_duration","rental_duration_rank"
+133,"Chamber Italian",7,"1"
+384,"Grosse Wonderful",5,"1"
+8,"Airport Pollock",6,"1"
+98,"Bright Encounters",4,"1"
+1,"Academy Dinosaur",6,"1"
+2,"Ace Goldfinger",3,"1"
+3,"Adaptation Holes",7,"1"
+4,"Affair Prejudice",5,"1"
+5,"African Egg",6,"1"
+```
 **8.**
 ```
 WITH CustomerRentals AS (
