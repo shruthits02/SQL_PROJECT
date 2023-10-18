@@ -256,9 +256,8 @@ The SQL query you provided appears to be correct for ranking films by rental dur
 4,"Affair Prejudice",5,"1"
 5,"African Egg",6,"1"
 ```
-**8.**
+**8.View and union**
 ```
--- Create a view that combines films available in the inventory from two stores
 CREATE OR REPLACE VIEW combined_inventory AS
 SELECT inv.film_id, f.title, inv.store_id
 FROM inventory inv
