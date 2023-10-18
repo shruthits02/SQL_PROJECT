@@ -50,7 +50,7 @@ This query will count the number of distinct (unique) customer IDs in the "CUSTO
 
 :three: AS UNIQUE_TOTAL_CUSTOMER: This part of the query gives the result of the COUNT operation an alias (a name) as UNIQUE_TOTAL_CUSTOMER. This alias makes it easier to reference the result in the output or in subsequent queries.
  
-**Output**
+**:white_check_mark: Output**
 ```
 "unique_total_customer"
 "599"
@@ -85,7 +85,7 @@ The AS selling_price part of the query assigns the name "selling_price" to the n
 
 :four: Finally, the LIMIT 50 clause limits the result set to the first 50 rows returned by the query.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "payment_id","customer_id","staff_id","rental_id","amount","selling_price","payment_date"
 17503,341,2,1520,"7.99","9.03","2007-02-15 22:25:46.996577"
@@ -136,7 +136,7 @@ Filters for languages with names 'English', 'French', or 'Japanese'.
 
 :five: Finally, the LIMIT 50 clause limits the result set to the first 50 rows that meet the specified conditions and order.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "language_id","film_id","title","description"
 1,985,"Wonderland Christmas","A Awe-Inspiring Character Study of a Waitress And a Car who must Pursue a Mad Scientist in The First Manned Space Station"
@@ -169,7 +169,7 @@ limit 50
 ```
 The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "customer_id","rental_id","rental_date","return_date","name","email"
 1,15315,"2005-08-22 20:03:46","2005-08-30 01:51:46","Mary Smith","mary.smith@sakilacustomer.org"
@@ -199,7 +199,7 @@ HAVING
 ```
 This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "customer_id","total"
 550,"151.69"
@@ -221,7 +221,7 @@ FROM film;
 ```
 This SQL query calculates various statistical measures for the "rental_duration" column in the "film" table, including the maximum, minimum, average, and standard deviation.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "max_rental_duration","min_rental_duration","avg_rental_duration","stddev_rental_duration"
 7,3,"4.99","1.41"
@@ -243,7 +243,7 @@ limit 50
 ```
 The SQL query you provided appears to be correct for ranking films by rental duration using DENSE_RANK and a correlated subquery. This query will produce a list of films along with their rental duration and the corresponding rank of the films based on rental duration in descending order.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "film_id","film_title","rental_duration","rental_duration_rank"
 133,"Chamber Italian",7,"1"
@@ -289,7 +289,7 @@ WHERE c.name = 'Comedy' AND CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer D
 ```
 This SQL query retrieves a list of comedy films featuring the actor "Jennifer Davis" by joining the "film_actor," "actor," "film," "film_category," and "category" tables. 
 
-**Output**
+**:white_check_mark: Output**
 ```
 "movie_name","name","actor_name"
 "Submarine Bed","Comedy","Jennifer Davis"
@@ -325,7 +325,7 @@ WHERE p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)
 ```
 This SQL query calculates the top-paying customer and the customer with the most rentals and then combines the results into a single query.
 
-**Output**
+**:white_check_mark: Output**
 ```
 "top_paying_customer_id","top_paying_first_name","top_paying_last_name","top_payment_amount","most_renting_customer_id","most_renting_first_name","most_renting_last_name","most_rented_films"
 148,"Eleanor","Hunt","211.55",148,"Eleanor","Hunt","46"
