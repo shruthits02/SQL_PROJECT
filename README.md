@@ -258,27 +258,24 @@ The SQL query you provided appears to be correct for ranking films by rental dur
 ```
 **8.**
 ```
-WITH CustomerRentals AS (
-  SELECT
-    c.customer_id,
-    c.first_name,
-    c.last_name,
-    COUNT(r.rental_id) AS rental_count
-  FROM
-    customer c
-    JOIN rental r ON c.customer_id = r.customer_id
-  GROUP BY
-    c.customer_id
-)
-SELECT
-  customer_id,
-  first_name,
-  last_name,
-  rental_count
-FROM CustomerRentals
-WHERE rental_count = (SELECT MAX(rental_count) FROM CustomerRentals)
+-- Create a view that combines films available in the inventory from two stores
+CREATE OR REPLACE VIEW combined_inventory AS
+SELECT inv.film_id, f.title, inv.store_id
+FROM inventory inv
+join film f on inv.film_id=f.film_id
+WHERE inv.store_id = 1
+
+UNION
+
+SELECT inv.film_id, f.title, inv.store_id
+FROM inventory inv
+join film f on inv.film_id=f.film_id
+WHERE inv.store_id = 2;
+
+select * from combined_inventory
+limit 25
 ```
-This SQL query first creates a Common Table Expression (CTE) called "CustomerRentals" to find the customer with the maximum number of rentals and then selects that customer.
+
 
 **9.Left join and concat**
 ```
