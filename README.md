@@ -320,6 +320,7 @@ This SQL script first creates or replaces a view called combined_inventory, whic
 
 :three: After creating the view, the script performs a SELECT * from the combined_inventory view and limits the result to the first 25 rows using LIMIT 25.
 
+**:white_check_mark: Output**
 ```
 "film_id","title","store_id"
 696,"Pride Alamo",1
