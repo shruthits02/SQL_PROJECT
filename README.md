@@ -122,6 +122,20 @@ LIMIT 50;
 ```
 selects specific columns from the "film" table where the "description" column contains the words 'car' or 'japan' (case-insensitive) and the "language_id" is in the set of IDs for languages with names 'English,' 'French,' or 'Japanese.' The results are then ordered by "film_id" in descending order and limited to the first 50 rows.
 
+:one: Selected the following columns from the film table: language_id,film_id,title,description.
+
+:two: The WHERE clause filters the rows based on two conditions:
+Rows where the description column contains either the word "car" or the string "j_p_n" (using the ILIKE operator for a case-insensitive search).
+Rows where the language_id matches values returned by a subquery.
+
+:three: The subquery in the WHERE clause:
+Selects the language_id from the language table.
+Filters for languages with names 'English', 'French', or 'Japanese'.
+
+:four: The ORDER BY film_id DESC clause orders the result set by the film_id column in descending order (from highest to lowest).
+
+:five: Finally, the LIMIT 50 clause limits the result set to the first 50 rows that meet the specified conditions and order.
+
 **Output**
 ```
 "language_id","film_id","title","description"
