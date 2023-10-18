@@ -308,6 +308,18 @@ WHERE inv.store_id = 2;
 select * from combined_inventory
 limit 25
 ```
+
+This SQL script first creates or replaces a view called combined_inventory, which combines inventory information for films in two different stores (store_id 1 and store_id 2). Then, it retrieves the first 25 rows from this view. 
+
+:one: The CREATE OR REPLACE VIEW statement is used to create a view named combined_inventory or replace it if it already exists.
+ 
+:two: The view is created by performing a UNION of two separate queries:
+- The first SELECT retrieves inventory information for films in store 1 (store_id = 1). It selects the film_id, title from the film table, and the store_id from the inventory table for store 1.
+
+- The second SELECT retrieves inventory information for films in store 2 (store_id = 2). It selects the same columns as the first query but filters for store 2.
+
+:three: After creating the view, the script performs a SELECT * from the combined_inventory view and limits the result to the first 25 rows using LIMIT 25.
+
 ```
 "film_id","title","store_id"
 696,"Pride Alamo",1
