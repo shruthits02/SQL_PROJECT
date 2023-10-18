@@ -393,6 +393,22 @@ WHERE p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)
 ```
 This SQL query calculates the top-paying customer and the customer with the most rentals and then combines the results into a single query.
 
+:one: The query first uses Common Table Expressions (CTEs) to calculate payment and rental statistics for each customer. Two CTEs, PaymentStats and RentalStats, are created to summarize payment and rental information, respectively.
+
+:two: In the PaymentStats CTE, it calculates the total payment made by each customer and groups the results by customer_id.
+
+:three: In the RentalStats CTE, it counts the number of rentals made by each customer and groups the results by customer_id.
+
+:four: The main query selects the following information:
+- The top-paying customer's customer_id, first_name, and last_name.
+- The total payment made by the top-paying customer.
+- The customer who has rented the most films (most_renting_customer_id, most_renting_first_name, most_renting_last_name).
+- The number of films rented by the customer who rented the most films.
+
+:five: The INNER JOIN statements are used to join the Customer table with the two CTEs (PaymentStats and RentalStats) based on the customer_id` to get the relevant information.
+
+:six: The WHERE clause filters the results to include customers who have the highest total payment (p.total_payment = (SELECT MAX(total_payment) FROM PaymentStats)) or the most rented films (r.num_rentals = (SELECT MAX(num_rentals) FROM RentalStats)).
+
 **:white_check_mark: Output**
 ```
 "top_paying_customer_id","top_paying_first_name","top_paying_last_name","top_payment_amount","most_renting_customer_id","most_renting_first_name","most_renting_last_name","most_rented_films"
