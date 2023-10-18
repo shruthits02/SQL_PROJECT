@@ -102,7 +102,7 @@ The AS selling_price part of the query assigns the name "selling_price" to the n
 
 ```
 
-**3.Wild characters used in Like '%' and '_'**
+**:three: Wild characters used in Like '%' and '_'**
 ```
 SELECT
     language_id,
@@ -154,7 +154,7 @@ Filters for languages with names 'English', 'French', or 'Japanese'.
 1,897,"Torque Bound","A Emotional Display of a Crocodile And a Husband who must Reach a Man in Ancient Japan"
 ```
 
-**4.Between and inner join**
+**:four: Between and inner join**
 ```
 SELECT r.customer_id,
 r.rental_id,r.rental_date,r.return_date,concat(c.first_name,' ',c.last_name)as Name,c.email
@@ -195,7 +195,7 @@ The SQL query is used to retrieve rental information for customers who returned 
 1,10437,"2005-08-01 08:51:04","2005-08-10 12:12:04","Mary Smith","mary.smith@sakilacustomer.org"
 ```
 
-**5.Sum, group by and having clause**
+**:five: Sum, group by and having clause**
 ```
 SELECT
 	customer_id,
@@ -228,7 +228,7 @@ This SQL query is used to retrieve the total payment amount for each customer an
 522,"161.68"
 ```
 
-**6.Maximum, minmimum, average, and standard deviation**
+**:six: Maximum, minmimum, average, and standard deviation**
 ```
 SELECT 
   MAX(rental_duration) AS max_rental_duration,
@@ -253,7 +253,7 @@ This SQL query calculates various statistical measures for the "rental_duration"
 7,3,"4.99","1.41"
 ```
 
-**7.Subquery and Dense_rank**
+**:seven: Subquery and Dense_rank**
 ```
 SELECT
     f.film_id,
@@ -290,7 +290,7 @@ The SQL query you provided appears to be correct for ranking films by rental dur
 4,"Affair Prejudice",5,"1"
 5,"African Egg",6,"1"
 ```
-**8.View and union**
+**:eight: View and union**
 ```
 CREATE OR REPLACE VIEW combined_inventory AS
 SELECT inv.film_id, f.title, inv.store_id
@@ -333,7 +333,7 @@ This SQL script first creates or replaces a view called combined_inventory, whic
 228,"Detective Vision",2
 ```
 
-**9.Left join and concat**
+**:nine: Left join and concat**
 ```
 SELECT f.title as movie_name, c.name, CONCAT(a.first_name, ' ', a.last_name) as actor_name
 FROM film_actor fa
@@ -363,7 +363,7 @@ This SQL query retrieves a list of comedy films featuring the actor "Jennifer Da
 "Submarine Bed","Comedy","Jennifer Davis"
 ```
 
-**10. Cte's**
+**:keycap_ten: Cte's**
 ```
 WITH PaymentStats AS (
   SELECT p.customer_id, SUM(p.amount) AS total_payment
