@@ -42,8 +42,14 @@ SELECT COUNT(DISTINCT CUSTOMER_ID) AS UNIQUE_TOTAL_CUSTOMER
 FROM CUSTOMER;
 ```
 
-This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER." 
+This query will count the number of distinct (unique) customer IDs in the "CUSTOMER" table and return the result with the alias "UNIQUE_TOTAL_CUSTOMER."
 
+:one: SELECT: This is the SQL keyword to indicate that you are selecting data from a table.
+
+:two: COUNT(DISTINCT CUSTOMER_ID): This part of the query calculates the count of distinct (unique) values in the CUSTOMER_ID column. It ensures that each CUSTOMER_ID is only counted once, even if it appears multiple times in the table.
+
+:three: AS UNIQUE_TOTAL_CUSTOMER: This part of the query gives the result of the COUNT operation an alias (a name) as UNIQUE_TOTAL_CUSTOMER. This alias makes it easier to reference the result in the output or in subsequent queries.
+ 
 **Output**
 ```
 "unique_total_customer"
