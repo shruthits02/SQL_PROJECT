@@ -345,6 +345,18 @@ WHERE c.name = 'Comedy' AND CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer D
 ```
 This SQL query retrieves a list of comedy films featuring the actor "Jennifer Davis" by joining the "film_actor," "actor," "film," "film_category," and "category" tables. 
 
+:one: The SELECT clause specifies the columns to be included in the result set, including the film title (movie_name), category name (name), and the concatenated actor's first and last name (actor_name).
+
+:two: The data is retrieved from multiple tables, joined as follows:
+- film_actor is joined with actor on the actor_id to associate actors with films.
+- film is joined with film_actor to link films with actors.
+- film is also joined with film_category on the film_id to associate films with categories.
+- Finally, category is joined with film_category using the category_id to link categories with films.
+
+:three: The WHERE clause is used to filter the results. It specifies two conditions:
+- Films in the 'Comedy' category (c.name = 'Comedy').
+- An actor with the concatenated name 'Jennifer Davis' (CONCAT(a.first_name, ' ', a.last_name) = 'Jennifer Davis').
+
 **:white_check_mark: Output**
 ```
 "movie_name","name","actor_name"
