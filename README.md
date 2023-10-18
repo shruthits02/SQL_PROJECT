@@ -29,7 +29,7 @@ The DVD Rental Management System is a database-driven application that enables a
 
 
 
-:dvd: <h2>DVD Rental ER Diagram</h2>
+<h2>:dvd: DVD Rental ER Diagram</h2>
 
 ![dvd-rental-sample-database-diagram](https://github.com/shruthits02/SQL_PROJECT/assets/147556178/8dc0208c-4d42-4867-9780-f8425ad8c694)
 
