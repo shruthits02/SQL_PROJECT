@@ -269,6 +269,14 @@ limit 50
 ```
 The SQL query you provided appears to be correct for ranking films by rental duration using DENSE_RANK and a correlated subquery. This query will produce a list of films along with their rental duration and the corresponding rank of the films based on rental duration in descending order.
 
+:one: The main SELECT clause retrieves information from the film table. It selects the film_id, aliases the title column as film_title, and includes the rental_duration column.
+
+:two: Inside the main SELECT statement, there is a subquery that calculates the rental_duration_rank for each film. This subquery uses the DENSE_RANK() window function to assign a rank to each film based on their rental_duration, with a higher rental_duration getting a lower rank. The ORDER BY clause in the window function specifies that films should be ordered by rental_duration in descending order. The subquery is correlated with the outer query by matching the film_id in the subquery to the film_id in the outer query.
+
+:three: The FROM clause specifies the film table, aliased as f.
+ 
+:four: The LIMIT 50 clause restricts the result set to the first 50 rows, effectively limiting the output to 50 films.
+
 **:white_check_mark: Output**
 ```
 "film_id","film_title","rental_duration","rental_duration_rank"
