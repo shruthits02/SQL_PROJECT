@@ -74,6 +74,17 @@ LIMIT 50;
 ```
 This query selects the specified columns from the "payment" table. It calculates the "selling_price" using a CASE statement that applies a 10% tax rate if the "amount" is less than 5, and a 13% tax rate if the "amount" is greater than or equal to 5. The "selling_price" is then rounded to two decimal places. Finally, the query limits the result to the first 50 rows using LIMIT 50.
 
+:one: Selected the following columns from the payment table:
+payment_id,customer_id,staff_id,rental_id,amount,payment_date
+
+:two: It uses a CASE statement to create the selling_price column. The CASE statement checks the value of the amount column for each row:
+
+:three: If the amount is less than 5, it adds 10% to the amount and rounds it to 2 decimal places.
+If the amount is 5 or greater, it adds 13% to the amount and rounds it to 2 decimal places.
+The AS selling_price part of the query assigns the name "selling_price" to the newly calculated column.
+
+:four: Finally, the LIMIT 50 clause limits the result set to the first 50 rows returned by the query.
+
 **Output**
 ```
 "payment_id","customer_id","staff_id","rental_id","amount","selling_price","payment_date"
