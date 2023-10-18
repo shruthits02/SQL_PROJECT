@@ -199,6 +199,14 @@ HAVING
 ```
 This SQL query is used to retrieve the total payment amount for each customer and filter the results to include only customers whose total payment amount is greater than $150.
 
+:one: The SELECT clause specifies the columns to be included in the result set. In this case, it selects the customer_id and the calculated sum of amount for each customer, aliased as Total.
+
+:two: The FROM clause specifies the table named payment from which the data is being retrieved.
+
+:three: The GROUP BY clause groups the rows in the payment table by the customer_id column. This is necessary when using an aggregate function like SUM to calculate the total amount spent by each customer.
+
+:four: The HAVING clause is used to filter the results after grouping. It ensures that only groups (in this case, customers) whose total spending (the sum of the amount column) is greater than 150 are included in the result set.
+
 **:white_check_mark: Output**
 ```
 "customer_id","total"
