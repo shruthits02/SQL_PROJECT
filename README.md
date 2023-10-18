@@ -35,7 +35,7 @@ The DVD Rental Management System is a database-driven application that enables a
 
 # SQL Code Analysis
 
-**1. Select and count(distinct)**
+**:one: Select and count(distinct)**
 
 ```
 SELECT COUNT(DISTINCT CUSTOMER_ID) AS UNIQUE_TOTAL_CUSTOMER
@@ -56,7 +56,7 @@ This query will count the number of distinct (unique) customer IDs in the "CUSTO
 "599"
 ```
 
-**2. Case statement and Round**
+**:two: Case statement and Round**
 ```
 SELECT
     payment_id,
