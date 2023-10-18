@@ -239,6 +239,14 @@ FROM film;
 ```
 This SQL query calculates various statistical measures for the "rental_duration" column in the "film" table, including the maximum, minimum, average, and standard deviation.
 
+:one: The MAX(rental_duration) function calculates the maximum value in the rental_duration column and aliases it as max_rental_duration.
+
+:two: The MIN(rental_duration) function calculates the minimum value in the rental_duration column and aliases it as min_rental_duration.
+
+:three: The AVG(rental_duration) function calculates the average value of the rental_duration column, and the ROUND() function is used to round it to two decimal places. It is aliased as avg_rental_duration.
+
+:four: The STDDEV(rental_duration) function calculates the standard deviation of the rental_duration column, and the ROUND() function is used to round it to two decimal places. It is aliased as stddev_rental_duration.
+
 **:white_check_mark: Output**
 ```
 "max_rental_duration","min_rental_duration","avg_rental_duration","stddev_rental_duration"
