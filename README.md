@@ -169,6 +169,16 @@ limit 50
 ```
 The SQL query is used to retrieve rental information for customers who returned their rentals between January 1, 2005, and December 31, 2005. The query also joins the "rental" table with the "customer" table and orders the results by customer ID in ascending order and rental ID in descending order. The "LIMIT 50" clause restricts the result set to the first 50 rows.
 
+:one: The SELECT clause specifies the columns to be included in the result set. It includes customer_id, rental_id, rental_date, return_date, the concatenated customer name (Name), and email.
+
+:two: The FROM clause specifies two tables: rental (aliased as r) and customer (aliased as c). This is for joining the rental and customer tables based on the customer_id column.
+
+:three: The WHERE clause filters the results to include only rentals with a return_date between January 1, 2005, and December 31, 2005.
+
+:four: The ORDER BY clause orders the results first by customer_id in ascending order and then by rental_id in descending order. This means that rows for each customer will be sorted by their ID in ascending order, and within each customer's rentals, the rental_id will be sorted in descending order.
+
+:five: The LIMIT clause restricts the result set to the first 50 rows, effectively limiting the output to 50 records.
+
 **:white_check_mark: Output**
 ```
 "customer_id","rental_id","rental_date","return_date","name","email"
