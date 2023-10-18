@@ -308,7 +308,17 @@ WHERE inv.store_id = 2;
 select * from combined_inventory
 limit 25
 ```
-
+```
+"film_id","title","store_id"
+696,"Pride Alamo",1
+374,"Graffiti Love",2
+182,"Control Anthem",1
+413,"Hedwig Alter",1
+983,"Won Dares",1
+623,"Newton Labyrinth",2
+902,"Trading Pinocchio",2
+228,"Detective Vision",2
+```
 
 **9.Left join and concat**
 ```
