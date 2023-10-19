@@ -304,7 +304,7 @@ SELECT inv.film_id, f.title, inv.store_id
 FROM inventory inv
 join film f on inv.film_id=f.film_id
 WHERE inv.store_id = 2;
-
+--------------------
 select * from combined_inventory
 limit 25
 ```
@@ -414,4 +414,10 @@ This SQL query calculates the top-paying customer and the customer with the most
 "top_paying_customer_id","top_paying_first_name","top_paying_last_name","top_payment_amount","most_renting_customer_id","most_renting_first_name","most_renting_last_name","most_rented_films"
 148,"Eleanor","Hunt","211.55",148,"Eleanor","Hunt","46"
 ```
+
+## 💪 Support
+
+<p>
+<img align="left" width="100" height="100" src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/2ddf9ba2-3318-4552-96ce-c11636b50a85">
+</p>
 
