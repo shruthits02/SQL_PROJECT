@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/057ce2fd-e34c-4dbd-bcaf-2857fd8fe201">
+<img align="left" width="70" height="70" src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/057ce2fd-e34c-4dbd-bcaf-2857fd8fe201">
 <img align="left" width="120" height="70" src="https://github.com/shruthits02/SQL_PROJECT/assets/147556178/a99a963a-f4a7-4a01-872f-0ebf229a19ba">
 <h1>Project</h1>
 <p align="center">
