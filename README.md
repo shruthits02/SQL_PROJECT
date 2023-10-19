@@ -363,7 +363,7 @@ This SQL query retrieves a list of comedy films featuring the actor "Jennifer Da
 "Submarine Bed","Comedy","Jennifer Davis"
 ```
 
-**:keycap_ten: Cte's**
+**:keycap_ten: Cte's and where clause**
 ```
 WITH PaymentStats AS (
   SELECT p.customer_id, SUM(p.amount) AS total_payment
